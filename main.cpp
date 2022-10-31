@@ -18,12 +18,28 @@ int main()
         exit(0);
     }
 
+    string linia;
+    int nr_linii=1;
 
-    plik<<imie<<endl;
-    plik<<nazwisko<<endl;
-    plik<<nr_tel<<endl;
+    while(getline(plik,linia))
+    {
+       switch(nr_linii)
+       {
+           case 1: imie = linia; break;
+           case 2: nazwisko = linia; break;
+           case 3: nr_tel=atoi(linia.c_str()); break;
+       }
+
+        nr_linii++;
+    }
+
 
     plik.close();
+
+    cout<<imie<<endl;
+    cout<<nazwisko<<endl;
+    cout<<nr_tel<<endl;
+
 
     return 0;
 }
